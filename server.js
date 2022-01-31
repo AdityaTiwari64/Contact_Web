@@ -34,7 +34,7 @@ app.get('/', async (req,res)=>{
 app.use("/articles",articleRouter)
 
 
-app.listen(port,()=>{
-    console.log(`Connected To The http://localhost:${port}`)
+app.listen(3000,()=>{
+    console.log(`Connected To The http://localhost:3000`)
 })
 
