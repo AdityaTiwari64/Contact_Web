@@ -1,10 +1,11 @@
+require("dotenv").config()
 const express = require("express");
 const mongoose = require("mongoose");
 // const bodyParser = require('body-parser')
 const methodOverride = require("method-override")
 const app = express();
 const articleModel = require("./model/model")
-// const port = 3000;
+const port = process.env.PORT ||  3009;
 const articleRouter = require("./routes/articles")
 
 // Mongo DB Connection
@@ -34,7 +35,7 @@ app.get('/', async (req,res)=>{
 app.use("/articles",articleRouter)
 
 
-app.listen(5000,()=>{
-    console.log(`Connected To The http://localhost:5000`)
+app.listen(port,()=>{
+    console.log(`Connected To The http://localhost:${port}`)
 })
 
